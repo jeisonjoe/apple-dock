@@ -25,7 +25,7 @@ export default function SmartStack({ isNightMode }) {
   };
 
   return (
-    <div className={`relative w-full h-[85%] rounded-[3rem] bg-[#1c1c1e] overflow-hidden flex items-center justify-center transition-colors duration-1000 ${isNightMode ? 'bg-black/80' : ''}`}>
+    <div className={`relative w-full h-[85%] rounded-[3rem] bg-black overflow-hidden flex items-center justify-center transition-colors duration-1000 ${isNightMode ? 'bg-black/80' : ''}`}>
       <AnimatePresence mode="popLayout" initial={false}>
         <motion.div
           key={index}
@@ -41,15 +41,14 @@ export default function SmartStack({ isNightMode }) {
           {widgets[index]}
         </motion.div>
       </AnimatePresence>
-      
+
       {/* Smart Stack Dots Indicator */}
       <div className="absolute right-4 flex flex-col gap-2">
         {widgets.map((_, i) => (
           <div
             key={i}
-            className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${
-              i === index ? "bg-white" : "bg-white/30"
-            }`}
+            className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${i === index ? "bg-white" : "bg-white/30"
+              }`}
           />
         ))}
       </div>

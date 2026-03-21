@@ -17,12 +17,12 @@ export default function CalendarWidget() {
     <div className="w-full h-full flex flex-col p-8 text-white/90 select-none pointer-events-none">
       <div className="flex items-baseline gap-4 mb-20">
         <CalendarIcon className="w-8 h-8 opacity-80" />
-        <h2 className="text-4xl font-semibold">{format(currentDate, "MMMM yyyy")}</h2>
+        <h2 className="text-4xl font-normal">{format(currentDate, "EEEE, MMMM yyyy")}</h2>
       </div>
 
       <div className="grid grid-cols-7 gap-y-2 gap-x-1 flex-1">
         {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, i) => (
-          <div key={`header-${i}`} className="text-center font-bold text-white/50 text-xl font-mono">
+          <div key={`header-${i}`} className="text-center font-normal text-white/50 text-xl">
             {day}
           </div>
         ))}
@@ -35,7 +35,7 @@ export default function CalendarWidget() {
           return (
             <div
               key={i}
-              className={`flex items-center justify-center font-medium text-2xl relative z-10`}
+              className={`flex items-center justify-center font-medium text-xl relative z-10`}
             >
               {today && (
                 <div className="absolute inset-0 bg-white/5 rounded-full -z-10" />
